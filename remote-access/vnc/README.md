@@ -30,7 +30,11 @@ vncserver :0 -geometry 1920x1080 -depth 24
 
     `sudo apt-get install xtightvncviewer`
 
-  - Otherwise, TightVNC is downloadable from [tightvnc.com](http://www.tightvnc.com/download.php)
+  - Otherwise, TightVNC is downloadable from [tightvnc.com]
+
+    If you try to log in and the connection is refused, re run the vncserver with :1 instead of :0 and add :1 after your ip in the login (e.g. 192.168.1.8 :1 ).  
+
+  - (NOTE TO EDITOR - In Windows 8 I got an error trying to log in to the pi. Essentially the pi refused the connection. After some research, I tried adding :0 after the ip in lightvncviewer, this did not work. I then ran vncserver with a :0 that did not work (got a warning rasberrpi:0 is taken because of /tmp/.xo-lock - I was accessing the pi through putty not sure if that mattered. Got it to work by running vncserver :1 on the pi and putting :1 after the ip address in the lightvncviewer in Windows)
 
 ### Automation and run at boot
 
